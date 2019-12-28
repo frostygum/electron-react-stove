@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import UserStore from './Store/UserStore';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, Switch, HashRouter } from 'react-router-dom';
 
 import { Home } from './Pages/Index';
 
@@ -10,11 +10,11 @@ import './App.css';
 function App() {
   return (
     <Provider userStore={new UserStore()}>
-       <BrowserRouter>
+       <HashRouter>
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   );
 }
